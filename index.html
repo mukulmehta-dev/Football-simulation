@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Football Hub | Squads, Match Simulator & Transfer News</title>
+  <meta name="description" content="Football Hub is a premier football media platform featuring European club squads, realistic match simulation engine, and breaking transfer news.">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/teams.css">
+  <link rel="stylesheet" href="css/simulator.css">
+  <link rel="stylesheet" href="css/transfers.css">
+  <link rel="stylesheet" href="css/admin.css">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚽</text></svg>">
+</head>
+<body>
+
+  <!-- Site Navigation Header -->
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a href="#home" class="logo-brand">
+        <div class="logo-badge">
+          <svg viewBox="0 0 36 36" class="ball-svg">
+            <circle cx="18" cy="18" r="16" fill="#0b0f16" stroke="#00e676" stroke-width="2.5"/>
+            <polygon points="18,10 23,14 21,20 15,20 13,14" fill="#00e676"/>
+            <line x1="18" y1="10" x2="18" y2="4" stroke="#ffffff" stroke-width="1.8"/>
+            <line x1="23" y1="14" x2="29" y2="12" stroke="#ffffff" stroke-width="1.8"/>
+            <line x1="21" y1="20" x2="26" y2="27" stroke="#ffffff" stroke-width="1.8"/>
+            <line x1="15" y1="20" x2="10" y2="27" stroke="#ffffff" stroke-width="1.8"/>
+            <line x1="13" y1="14" x2="7" y2="12" stroke="#ffffff" stroke-width="1.8"/>
+          </svg>
+        </div>
+        <div class="brand-text-group">
+          <div class="brand-name">FOOTBALL <span class="brand-highlight">HUB</span></div>
+          <div class="brand-subtitle">YOUR FOOTBALL WORLD</div>
+        </div>
+      </a>
+
+      <nav class="main-nav">
+        <ul class="nav-links">
+          <li class="nav-item active"><a href="#home">HOME</a></li>
+          <li class="nav-item"><a href="#news">NEWS</a></li>
+          <li class="nav-item"><a href="#transfers">TRANSFERS</a></li>
+          <li class="nav-item"><a href="#matches">MATCHES</a></li>
+          <li class="nav-item"><a href="#teams">TEAMS</a></li>
+          <li class="nav-item"><a href="#simulator">SIMULATOR</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="nav-icon-btn" id="nav-search-trigger" title="Quick Search (Ctrl + K)">
+          <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <a href="#admin" class="btn-admin-pill" title="Admin CMS Panel">
+          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>ADMIN</span>
+        </a>
+
+        <button class="audio-toggle-btn" id="btn-audio-toggle" title="Toggle Audio Sound FX">
+          🔊
+        </button>
+
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle-btn" aria-label="Toggle Navigation">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main View Container -->
+  <main class="container page-content">
+
+    <!-- ==========================================
+         VIEW 1: HOMEPAGE (EXACT THEME MOCKUP)
+         ========================================== -->
+    <section id="view-home" class="view-section active">
+      
+      <!-- HERO BANNER SECTION (CINEMATIC FULL BACKGROUND) -->
+      <div class="hero-theme-banner">
+        <div class="hero-left-content">
+          <div class="hero-tag">— WELCOME TO —</div>
+          <h1 class="hero-headline">
+            FOOTBALL <span class="headline-hub">HUB</span>
+          </h1>
+          <p class="hero-description">
+            Latest transfer news, match updates and simulate matches between your favorite clubs.
+          </p>
+          <div class="hero-action-buttons">
+            <a href="#news" class="hero-btn-pill">
+              <span class="btn-icon">📰</span>
+              <span>EXPLORE NEWS</span>
+            </a>
+            <a href="#simulator" class="hero-btn-pill">
+              <span class="btn-icon">⚽</span>
+              <span>SIMULATE MATCH</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- DUAL FEATURE SHOWCASE CARDS -->
+      <div class="dual-showcase-grid">
+        
+        <!-- CARD 1: TRANSFER NEWS -->
+        <div class="showcase-card showcase-transfer">
+          <div class="showcase-header">
+            <div class="showcase-title-row">
+              <span class="showcase-icon-circle icon-green">🔄</span>
+              <h2 class="showcase-heading">TRANSFER NEWS</h2>
+            </div>
+            <p class="showcase-summary">All the latest transfer updates, rumours and official deals.</p>
+            <a href="#transfers" class="showcase-link-green">
+              <span>VIEW TRANSFER NEWS</span>
+              <span class="arrow-glyph">→</span>
+            </a>
+          </div>
+
+          <div class="showcase-players-visual">
+            <img src="assets/images/transfer_trio_players.jpg" alt="Star Football Transfers" class="showcase-img" onerror="this.style.display='none'">
+            <div class="showcase-visual-fade"></div>
+          </div>
+
+          <div class="showcase-bottom-stats">
+            <div class="stat-badge-col">
+              <span class="stat-badge-icon circle-check">✓</span>
+              <div class="stat-badge-text">
+                <strong>124</strong>
+                <span>Official Transfers</span>
+              </div>
+            </div>
+            <div class="stat-badge-col">
+              <span class="stat-badge-icon circle-question">?</span>
+              <div class="stat-badge-text">
+                <strong>86</strong>
+                <span>Rumours</span>
+              </div>
+            </div>
+            <div class="stat-badge-col">
+              <span class="stat-badge-icon icon-horn">📣</span>
+              <div class="stat-badge-text">
+                <strong>38</strong>
+                <span>Here We Go</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2: MATCH SIMULATOR -->
+        <div class="showcase-card showcase-simulator">
+          <div class="showcase-header">
+            <div class="showcase-title-row">
+              <span class="showcase-icon-circle icon-blue">🎮</span>
+              <h2 class="showcase-heading">MATCH SIMULATOR</h2>
+            </div>
+            <p class="showcase-summary">Choose clubs, set lineups and simulate realistic football matches.</p>
+            <a href="#simulator" class="showcase-btn-blue">
+              <span>SIMULATE MATCH</span>
+              <span class="arrow-glyph">→</span>
+            </a>
+          </div>
+
+          <div class="showcase-players-visual">
+            <img src="assets/images/simulator_duo_players.jpg" alt="Haaland & Mbappé Simulator" class="showcase-img" onerror="this.style.display='none'">
+            <div class="showcase-visual-fade"></div>
+          </div>
+
+          <div class="showcase-bottom-stats">
+            <div class="stat-badge-col">
+              <span class="stat-badge-icon icon-stadium">🛡️</span>
+              <div class="stat-badge-text">
+                <strong>900+</strong>
+                <span>Clubs</span>
+              </div>
+            </div>
+            <div class="stat-badge-col">
+              <span class="stat-badge-icon icon-squads">👥</span>
+              <div class="stat-badge-text">
+                <strong>2025/26</strong>
+                <span>Squads</span>
+              </div>
+            </div>
+            <div class="stat-badge-col">
+              <span class="stat-badge-icon icon-chart">📈</span>
+              <div class="stat-badge-text">
+                <strong>Realistic</strong>
+                <span>Simulation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- BOTTOM SPLIT DASHBOARD: LATEST TRANSFERS + UPCOMING TOP MATCHES -->
+      <div class="bottom-split-dashboard">
+        
+        <!-- LEFT PANEL: LATEST TRANSFER NEWS -->
+        <div class="dashboard-panel">
+          <div class="panel-heading-bar">
+            <div class="panel-title-with-bar bar-green">
+              LATEST TRANSFER NEWS
+            </div>
+            <a href="#transfers" class="panel-view-all-link">
+              VIEW ALL <span class="arrow">→</span>
+            </a>
+          </div>
+
+          <div class="home-transfer-cards-row" id="home-transfer-cards-container">
+            <!-- Populated dynamically by app.js -->
+          </div>
+        </div>
+
+        <!-- RIGHT PANEL: UPCOMING TOP MATCHES -->
+        <div class="dashboard-panel">
+          <div class="panel-heading-bar">
+            <div class="panel-title-with-bar bar-blue">
+              UPCOMING TOP MATCHES
+            </div>
+            <a href="#matches" class="panel-view-all-link">
+              VIEW ALL <span class="arrow">→</span>
+            </a>
+          </div>
+
+          <div class="upcoming-matches-table" id="home-upcoming-matches-container">
+            <!-- Populated dynamically by app.js -->
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==========================================
+         VIEW 2: NEWS & EDITORIAL HUB
+         ========================================== -->
+    <section id="view-news" class="view-section">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-tag">Football Gazette</span>
+          <h1>Breaking Football News & Tactical Analysis</h1>
+          <p>Read expert match previews, managerial tactical breakdowns, and European tournament coverage.</p>
+        </div>
+      </div>
+
+      <!-- News Filter Tabs -->
+      <div class="filter-tabs" id="news-category-filters">
+        <button class="filter-btn active" data-category="all">All News</button>
+        <button class="filter-btn" data-category="ucl">Champions League</button>
+        <button class="filter-btn" data-category="epl">Premier League</button>
+        <button class="filter-btn" data-category="laliga">La Liga</button>
+        <button class="filter-btn" data-category="tactics">Tactical Column</button>
+      </div>
+
+      <!-- News Articles Grid -->
+      <div class="news-articles-grid" id="news-grid-container"></div>
+    </section>
+
+    <!-- ==========================================
+         VIEW 3: TRANSFERS RADAR
+         ========================================== -->
+    <section id="view-transfers" class="view-section">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-tag">Transfer Radar</span>
+          <h1>Football Transfer News Hub</h1>
+          <p>Real-time transfer updates, confirmed agreements, negotiations, and "Here We Go" announcements.</p>
+        </div>
+      </div>
+
+      <!-- Breaking Transfer Ticker Bar -->
+      <div class="transfer-ticker-bar">
+        <div class="ticker-label"><span>🚨</span> Transfer Radar</div>
+        <div class="ticker-content" id="transfer-ticker-text">Loading live transfer buzz...</div>
+      </div>
+
+      <!-- Controls & Filters -->
+      <div class="transfers-controls">
+        <div class="filter-tabs" id="transfer-status-filters" style="margin-bottom: 0;"></div>
+
+        <div class="transfers-search-filter">
+          <input type="text" id="transfers-search-input" placeholder="🔍 Search by player or headline...">
+          <select id="transfers-club-filter"></select>
+        </div>
+      </div>
+
+      <!-- Transfers Grid -->
+      <div class="transfers-grid" id="transfers-grid-container"></div>
+    </section>
+
+    <!-- ==========================================
+         VIEW 4: MATCHES CENTER
+         ========================================== -->
+    <section id="view-matches" class="view-section">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-tag">Match Center</span>
+          <h1>Upcoming Fixtures & Match Schedule</h1>
+          <p>Select any high-stakes fixture to launch directly into the Match Simulator engine.</p>
+        </div>
+      </div>
+
+      <!-- Matchday Fixtures Container -->
+      <div class="matches-center-container" id="matches-center-container"></div>
+    </section>
+
+    <!-- ==========================================
+         VIEW 5: TEAMS & SQUADS DATABASE
+         ========================================== -->
+    <section id="view-teams" class="view-section">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-tag">Clubs Database</span>
+          <h1>Football Teams & Squads</h1>
+          <p>Browse European football clubs, view overall strengths, and inspect detailed player rosters.</p>
+        </div>
+      </div>
+
+      <!-- League Filter Bar -->
+      <div class="filter-tabs" id="teams-league-filters"></div>
+
+      <!-- Teams Grid -->
+      <div class="teams-grid" id="teams-grid-container"></div>
+    </section>
+
+    <!-- ==========================================
+         VIEW 6: TEAM SQUAD DETAIL
+         ========================================== -->
+    <section id="view-team-detail" class="view-section">
+      <div style="margin-bottom: 1.5rem;">
+        <button class="btn btn-secondary btn-sm" id="btn-back-to-teams">
+          ⬅ Back to All Clubs
+        </button>
+      </div>
+
+      <!-- Team Banner -->
+      <div id="team-squad-banner" class="team-hero-banner"></div>
+
+      <!-- Squad Category Tabs -->
+      <div class="squad-view-nav">
+        <div class="filter-tabs" id="squad-position-tabs" style="margin-bottom: 0;"></div>
+      </div>
+
+      <!-- Squad Players Container -->
+      <div id="team-squad-players-container"></div>
+    </section>
+
+    <!-- ==========================================
+         VIEW 7: MATCH SIMULATOR
+         ========================================== -->
+    <section id="view-simulator" class="view-section">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-tag">Match Engine</span>
+          <h1>Interactive Match Simulator</h1>
+          <p>Pick teams and tactical formations. The engine calculates ratings, possession, shot probability, and generates live commentary.</p>
+        </div>
+      </div>
+
+      <div class="simulator-container">
+        <!-- Match Setup Card -->
+        <div class="match-arena-card">
+          <div class="setup-teams-grid">
+            <!-- Home Team Select -->
+            <div class="team-select-panel home-panel">
+              <div class="panel-header-label"><span>🏠</span> Home Team</div>
+              <select id="sim-home-team-select" class="team-select-dropdown"></select>
+              
+              <div class="team-preview-strip">
+                <div class="team-preview-crest" id="home-preview-crest"></div>
+                <div class="team-preview-stats">
+                  <div class="stat-tag"><span class="tag-val" id="home-preview-att" style="color: var(--accent-gold);">--</span><br>ATT</div>
+                  <div class="stat-tag"><span class="tag-val" id="home-preview-mid" style="color: var(--accent-green);">--</span><br>MID</div>
+                  <div class="stat-tag"><span class="tag-val" id="home-preview-def" style="color: var(--accent-cyan);">--</span><br>DEF</div>
+                </div>
+              </div>
+
+              <div class="formation-picker">
+                <span>Formation:</span>
+                <select id="home-formation-select" class="formation-select">
+                  <option value="4-3-3">4-3-3 Attack</option>
+                  <option value="4-2-3-1">4-2-3-1 Balanced</option>
+                  <option value="4-4-2">4-4-2 Classic</option>
+                  <option value="3-5-2">3-5-2 Wingback</option>
+                  <option value="5-3-2">5-3-2 Defensive</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- VS Center Divider -->
+            <div class="vs-divider">
+              <div class="vs-circle">VS</div>
+            </div>
+
+            <!-- Away Team Select -->
+            <div class="team-select-panel away-panel">
+              <div class="panel-header-label"><span>✈️</span> Away Team</div>
+              <select id="sim-away-team-select" class="team-select-dropdown"></select>
+
+              <div class="team-preview-strip">
+                <div class="team-preview-crest" id="away-preview-crest"></div>
+                <div class="team-preview-stats">
+                  <div class="stat-tag"><span class="tag-val" id="away-preview-att" style="color: var(--accent-gold);">--</span><br>ATT</div>
+                  <div class="stat-tag"><span class="tag-val" id="away-preview-mid" style="color: var(--accent-green);">--</span><br>MID</div>
+                  <div class="stat-tag"><span class="tag-val" id="away-preview-def" style="color: var(--accent-cyan);">--</span><br>DEF</div>
+                </div>
+              </div>
+
+              <div class="formation-picker">
+                <span>Formation:</span>
+                <select id="away-formation-select" class="formation-select">
+                  <option value="4-3-3">4-3-3 Attack</option>
+                  <option value="4-2-3-1">4-2-3-1 Balanced</option>
+                  <option value="4-4-2">4-4-2 Classic</option>
+                  <option value="3-5-2">3-5-2 Wingback</option>
+                  <option value="5-3-2">5-3-2 Defensive</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Controls Strip -->
+          <div class="sim-controls-strip">
+            <div class="speed-control-group">
+              <span>Simulation Speed:</span>
+              <button class="speed-btn" data-speed="instant">Instant</button>
+              <button class="speed-btn active" data-speed="fast">Fast (5x)</button>
+              <button class="speed-btn" data-speed="live">Live (90s)</button>
+            </div>
+
+            <button class="btn btn-primary btn-simulate" id="btn-start-simulation">
+              <span>⚽</span> Simulate Match
+            </button>
+          </div>
+        </div>
+
+        <!-- Live Scoreboard & Events Area -->
+        <div id="live-sim-arena-container" style="display: none;">
+          <!-- Scoreboard -->
+          <div class="live-scoreboard">
+            <div class="scoreboard-status-bar">
+              <div class="match-clock-wrap">
+                <div class="pulse-dot"></div>
+                <span class="match-clock" id="sim-match-clock">00'</span>
+              </div>
+              <span class="badge badge-green">MATCHDAY ARENA</span>
+            </div>
+
+            <div class="scoreboard-main">
+              <div class="scoreboard-team">
+                <div class="scoreboard-crest" id="sim-scoreboard-home-crest"></div>
+                <div class="scoreboard-team-name" id="sim-scoreboard-home-name">Home Team</div>
+              </div>
+
+              <div class="scoreboard-score-box">
+                <span class="score-digit" id="sim-score-home">0</span>
+                <span class="score-separator">:</span>
+                <span class="score-digit" id="sim-score-away">0</span>
+              </div>
+
+              <div class="scoreboard-team away">
+                <div class="scoreboard-crest" id="sim-scoreboard-away-crest"></div>
+                <div class="scoreboard-team-name" id="sim-scoreboard-away-name">Away Team</div>
+              </div>
+            </div>
+
+            <div class="match-progress-container">
+              <div class="match-progress-bar" id="sim-match-progress"></div>
+            </div>
+          </div>
+
+          <!-- Split: Events vs Stats -->
+          <div class="sim-live-split" style="margin-top: 1.5rem;">
+            <!-- Timeline / Commentary -->
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <h3>🎙️ Match Commentary & Key Events</h3>
+                <span class="badge badge-cyan">Live Feed</span>
+              </div>
+              <div class="timeline-events-list" id="sim-timeline-events"></div>
+            </div>
+
+            <!-- Head to Head Stats -->
+            <div class="stats-comparison-card">
+              <div class="stats-card-header">
+                <h3>📊 Match Statistics</h3>
+                <span class="badge badge-gold">Live Telemetry</span>
+              </div>
+
+              <!-- Possession -->
+              <div class="stat-comparison-row">
+                <div class="stat-labels-row">
+                  <span id="stat-home-possession">50%</span>
+                  <span class="stat-title">Possession</span>
+                  <span id="stat-away-possession">50%</span>
+                </div>
+                <div class="stat-bars-duo">
+                  <div class="home-bar-fill" id="bar-home-possession" style="width: 50%;"></div>
+                  <div class="away-bar-fill" id="bar-away-possession" style="width: 50%;"></div>
+                </div>
+              </div>
+
+              <!-- Total Shots -->
+              <div class="stat-comparison-row">
+                <div class="stat-labels-row">
+                  <span id="stat-home-shots">0</span>
+                  <span class="stat-title">Total Shots</span>
+                  <span id="stat-away-shots">0</span>
+                </div>
+                <div class="stat-bars-duo">
+                  <div class="home-bar-fill" id="bar-home-shots" style="width: 50%;"></div>
+                  <div class="away-bar-fill" id="bar-away-shots" style="width: 50%;"></div>
+                </div>
+              </div>
+
+              <!-- Shots on Target -->
+              <div class="stat-comparison-row">
+                <div class="stat-labels-row">
+                  <span id="stat-home-sot">0</span>
+                  <span class="stat-title">Shots on Target</span>
+                  <span id="stat-away-sot">0</span>
+                </div>
+                <div class="stat-bars-duo">
+                  <div class="home-bar-fill" id="bar-home-sot" style="width: 50%;"></div>
+                  <div class="away-bar-fill" id="bar-away-sot" style="width: 50%;"></div>
+                </div>
+              </div>
+
+              <!-- Expected Goals xG -->
+              <div class="stat-comparison-row">
+                <div class="stat-labels-row">
+                  <span id="stat-home-xg">0.00</span>
+                  <span class="stat-title">Expected Goals (xG)</span>
+                  <span id="stat-away-xg">0.00</span>
+                </div>
+                <div class="stat-bars-duo">
+                  <div class="home-bar-fill" id="bar-home-xg" style="width: 50%;"></div>
+                  <div class="away-bar-fill" id="bar-away-xg" style="width: 50%;"></div>
+                </div>
+              </div>
+
+              <!-- Corners -->
+              <div class="stat-comparison-row">
+                <div class="stat-labels-row">
+                  <span id="stat-home-corners">0</span>
+                  <span class="stat-title">Corners</span>
+                  <span id="stat-away-corners">0</span>
+                </div>
+                <div class="stat-bars-duo">
+                  <div class="home-bar-fill" id="bar-home-corners" style="width: 50%;"></div>
+                  <div class="away-bar-fill" id="bar-away-corners" style="width: 50%;"></div>
+                </div>
+              </div>
+
+              <!-- Fouls -->
+              <div class="stat-comparison-row">
+                <div class="stat-labels-row">
+                  <span id="stat-home-fouls">0</span>
+                  <span class="stat-title">Fouls</span>
+                  <span id="stat-away-fouls">0</span>
+                </div>
+                <div class="stat-bars-duo">
+                  <div class="home-bar-fill" id="bar-home-fouls" style="width: 50%;"></div>
+                  <div class="away-bar-fill" id="bar-away-fouls" style="width: 50%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Post Match Report & MOTM -->
+          <div id="sim-post-match-report" class="post-match-card" style="display: none;"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         VIEW 8: ADMIN DASHBOARD
+         ========================================== -->
+    <section id="view-admin" class="view-section">
+      <div class="admin-wrapper">
+        <div class="admin-header-banner">
+          <div>
+            <div class="badge badge-green" style="margin-bottom: 0.4rem;">⚙️ Content Management System</div>
+            <h1>Admin Control Panel</h1>
+            <p>Publish transfer stories, manage squad rosters, adjust player ratings, and backup local storage data.</p>
+          </div>
+
+          <div class="admin-tabs">
+            <button class="admin-tab-btn active" data-tab="publish-transfer">✍️ Publish Transfer</button>
+            <button class="admin-tab-btn" data-tab="manage-squads">👥 Squad & Ratings</button>
+            <button class="admin-tab-btn" data-tab="manage-transfers">📝 Manage Posts</button>
+            <button class="admin-tab-btn" data-tab="system-backups">💾 Backup & Restore</button>
+          </div>
+        </div>
+
+        <!-- Tab 1: Publish Transfer -->
+        <div id="tab-publish-transfer" class="admin-tab-content active">
+          <div class="admin-card">
+            <h3 style="margin-bottom: 1.5rem;">Create & Publish Transfer Post</h3>
+            <form id="admin-publish-transfer-form">
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="transfer-player-name">Player Name *</label>
+                  <input type="text" id="transfer-player-name" placeholder="e.g. Victor Osimhen" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="transfer-status">Transfer Status *</label>
+                  <select id="transfer-status">
+                    <option value="HERE WE GO">HERE WE GO 🔥</option>
+                    <option value="Official Done Deal">Official Done Deal ✅</option>
+                    <option value="Negotiations Ongoing">Negotiations Ongoing 💬</option>
+                    <option value="Transfer Rumour">Transfer Rumour 👀</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="transfer-from-club">Current Club *</label>
+                  <input type="text" id="transfer-from-club" placeholder="e.g. SSC Napoli" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="transfer-to-club">Destination Club *</label>
+                  <input type="text" id="transfer-to-club" placeholder="e.g. Chelsea FC" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="transfer-fee">Transfer Fee / Deal Type</label>
+                  <input type="text" id="transfer-fee" placeholder="e.g. €75M + €10M add-ons">
+                </div>
+
+                <div class="form-group">
+                  <label for="transfer-tier">Reliability Tier</label>
+                  <select id="transfer-tier">
+                    <option value="Tier 1 — Confirmed">Tier 1 — High Reliability</option>
+                    <option value="Tier 2 — Advanced Talks">Tier 2 — Strong Sources</option>
+                    <option value="Tier 3 — Media Rumour">Tier 3 — Speculation</option>
+                  </select>
+                </div>
+
+                <div class="form-group full-width">
+                  <label for="transfer-headline">Article Headline *</label>
+                  <input type="text" id="transfer-headline" placeholder="e.g. HERE WE GO! Chelsea agree blockbuster deal for Victor Osimhen" required>
+                </div>
+
+                <div class="form-group full-width">
+                  <label for="transfer-summary">Short Summary *</label>
+                  <input type="text" id="transfer-summary" placeholder="Brief 1-2 sentence overview for the feed card..." required>
+                </div>
+
+                <div class="form-group full-width">
+                  <label for="transfer-article">Full Article & Details</label>
+                  <textarea id="transfer-article" placeholder="Write the complete story, contract duration, salary terms, and quotes..."></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="transfer-author">Reporter / Source</label>
+                  <input type="text" id="transfer-author" placeholder="e.g. Fabrizio Romano">
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-lg">
+                <span>🚀</span> Publish Transfer Story
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Tab 2: Manage Squads & Ratings -->
+        <div id="tab-manage-squads" class="admin-tab-content">
+          <div class="admin-card">
+            <div class="squad-edit-header">
+              <div>
+                <h3>Edit Team Squad & Player Ratings</h3>
+                <p style="font-size: 0.88rem; color: var(--text-muted);">Adjusting ratings updates overall team strengths and simulator mathematics instantly.</p>
+              </div>
+
+              <div style="display: flex; gap: 0.75rem; align-items: center;">
+                <label for="admin-squad-team-select" style="font-weight: 600;">Select Club:</label>
+                <select id="admin-squad-team-select" class="formation-select" style="padding: 0.6rem 1rem;"></select>
+              </div>
+            </div>
+
+            <!-- Squad Table -->
+            <div class="admin-table-wrap">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>No.</th>
+                    <th>Player</th>
+                    <th>Position</th>
+                    <th>Rating (OVR)</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="admin-squad-table-body"></tbody>
+              </table>
+            </div>
+
+            <!-- Add Player Form -->
+            <div style="margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle);">
+              <h4 style="margin-bottom: 1rem;">➕ Add New Player to Club</h4>
+              <form id="admin-add-player-form">
+                <div class="form-grid">
+                  <div class="form-group">
+                    <label for="new-player-name">Player Name *</label>
+                    <input type="text" id="new-player-name" placeholder="e.g. Jamal Musiala" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="new-player-number">Jersey Number</label>
+                    <input type="number" id="new-player-number" placeholder="e.g. 10" min="1" max="99" value="10">
+                  </div>
+                  <div class="form-group">
+                    <label for="new-player-category">Squad Category</label>
+                    <select id="new-player-category">
+                      <option value="Forwards">Forwards</option>
+                      <option value="Midfielders">Midfielders</option>
+                      <option value="Defenders">Defenders</option>
+                      <option value="Goalkeepers">Goalkeepers</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="new-player-position">Specific Position</label>
+                    <input type="text" id="new-player-position" placeholder="e.g. CAM, LW, ST, CB, GK" value="CAM">
+                  </div>
+                  <div class="form-group">
+                    <label for="new-player-rating">Rating (50 - 99)</label>
+                    <input type="number" id="new-player-rating" min="50" max="99" value="84">
+                  </div>
+                  <div class="form-group">
+                    <label for="new-player-nationality">Nationality</label>
+                    <input type="text" id="new-player-nationality" placeholder="e.g. Germany">
+                  </div>
+                </div>
+
+                <button type="submit" class="btn btn-secondary btn-sm">
+                  Add Player to Squad
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: Manage Transfer Posts -->
+        <div id="tab-manage-transfers" class="admin-tab-content">
+          <div class="admin-card">
+            <h3 style="margin-bottom: 1.5rem;">Manage Published Transfer Stories</h3>
+            <div id="admin-transfers-list-container"></div>
+          </div>
+        </div>
+
+        <!-- Tab 4: System Backups & Factory Reset -->
+        <div id="tab-system-backups" class="admin-tab-content">
+          <div class="admin-card">
+            <h3 style="margin-bottom: 1.5rem;">Data Persistence & Backup Management</h3>
+            <div class="backup-grid">
+              <div class="backup-card">
+                <h4>💾 Export Data Backup</h4>
+                <p style="font-size: 0.88rem; color: var(--text-secondary);">Download all custom teams, player ratings, and transfer articles as a JSON file.</p>
+                <button class="btn btn-secondary btn-sm" id="btn-export-backup">Export Backup JSON</button>
+              </div>
+
+              <div class="backup-card">
+                <h4>📥 Restore from JSON</h4>
+                <p style="font-size: 0.88rem; color: var(--text-secondary);">Upload a previously exported JSON backup to restore your data.</p>
+                <input type="file" id="import-backup-file" accept=".json" style="display: none;">
+                <button class="btn btn-secondary btn-sm" id="btn-import-backup">Upload Backup JSON</button>
+              </div>
+
+              <div class="backup-card" style="border-color: rgba(239, 68, 68, 0.3);">
+                <h4 style="color: #fca5a5;">⚠️ Factory Reset</h4>
+                <p style="font-size: 0.88rem; color: var(--text-secondary);">Reset all data back to the original default European squads and transfer news.</p>
+                <button class="btn btn-danger btn-sm" id="btn-factory-reset">Reset to Factory Defaults</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================
+       MODALS
+       ========================================== -->
+
+  <!-- Player Detail Modal -->
+  <div class="modal-overlay" id="player-detail-modal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 style="font-size: 1.2rem;">Player Profile</h3>
+        <button class="modal-close-btn" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Transfer Story Modal -->
+  <div class="modal-overlay" id="transfer-story-modal">
+    <div class="modal-dialog" style="max-width: 760px;">
+      <div class="modal-header">
+        <h3 style="font-size: 1.2rem;">Transfer Story</h3>
+        <button class="modal-close-btn" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Global Quick Search Modal -->
+  <div class="modal-overlay" id="global-search-modal">
+    <div class="modal-dialog" style="max-width: 580px;">
+      <div class="modal-header">
+        <h3 style="font-size: 1.15rem;">🔍 Quick Search</h3>
+        <button class="modal-close-btn" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-wrap">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="global-search-input" placeholder="Search clubs, players, transfers..." autocomplete="off">
+        </div>
+        <div class="search-results-list" id="global-search-results"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-notifications-container"></div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-brand">
+            <div class="logo-badge">
+              <svg viewBox="0 0 36 36" class="ball-svg">
+                <circle cx="18" cy="18" r="16" fill="#0b0f16" stroke="#00e676" stroke-width="2.5"/>
+                <polygon points="18,10 23,14 21,20 15,20 13,14" fill="#00e676"/>
+              </svg>
+            </div>
+            <div class="brand-text-group">
+              <div class="brand-name">FOOTBALL <span class="brand-highlight">HUB</span></div>
+              <div class="brand-subtitle">YOUR FOOTBALL WORLD</div>
+            </div>
+          </div>
+          <p>
+            An advanced football media and simulation platform designed for tactical match analysis, squad management, and real-time transfer tracking.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#news">News & Articles</a></li>
+            <li><a href="#transfers">Transfer Radar</a></li>
+            <li><a href="#matches">Match Center</a></li>
+            <li><a href="#teams">Clubs & Squads</a></li>
+            <li><a href="#simulator">Match Simulator</a></li>
+            <li><a href="#admin">Admin Dashboard</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Platform Specs</h4>
+          <ul class="footer-links">
+            <li><span style="color: var(--accent-green);">●</span> Vanilla ES6 Modules</li>
+            <li><span style="color: var(--accent-cyan);">●</span> LocalStorage CRUD Engine</li>
+            <li><span style="color: var(--accent-gold);">●</span> Web Audio Synthesizer</li>
+            <li><span style="color: #a78bfa;">●</span> Zero External Dependencies</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2024-2026 Football Hub. Developed for portfolio and live project showcase.</span>
+        <span>Built with clean HTML5, CSS3, & Modern JavaScript.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Application Controller Script -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

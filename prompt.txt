@@ -1,0 +1,210 @@
+I am building a football website called “Football Hub”.
+
+I want you to improve the project based on the current website, but DO NOT completely redesign or replace everything that is already working.
+
+CURRENT FEATURES:
+- Homepage
+- News page
+- Transfers page
+- Matches page
+- Article page
+- Search bar
+- Admin page
+- Admin can create/publish posts
+- Posts are currently stored using browser Local Storage
+- Admin can edit and delete posts
+- Navigation between pages works
+
+MAIN GOAL:
+
+I want this website to focus on ONLY TWO major features:
+
+1. ⚽ FOOTBALL SQUADS + MATCH SIMULATOR
+2. 🔄 FOOTBALL TRANSFER NEWS
+
+Do not add unrelated features unless they are necessary for these two systems.
+
+━━━━━━━━━━━━━━━━━━━━━━
+FEATURE 1 — TEAM & SQUAD SYSTEM
+━━━━━━━━━━━━━━━━━━━━━━
+
+Create a “Teams” section where users can browse football clubs.
+
+Each team should have:
+
+- Team name
+- Team logo
+- Country/league
+- Squad
+- Players divided by position:
+  - Goalkeepers
+  - Defenders
+  - Midfielders
+  - Forwards
+- Player name
+- Player position
+- Player rating
+- Player image if available
+
+I want the squad data to be structured so that I can update players later.
+
+Create an admin-friendly system where team squads can eventually be updated without manually changing the HTML of every page.
+
+Start with a few teams as sample data, but structure the system so more teams can easily be added later.
+
+━━━━━━━━━━━━━━━━━━━━━━
+FEATURE 2 — MATCH SIMULATOR
+━━━━━━━━━━━━━━━━━━━━━━
+
+Create a Match Simulator page.
+
+Users should be able to:
+
+1. Select Home Team
+2. Select Away Team
+3. View the available squads
+4. Select a formation
+5. Select a starting XI
+6. Start the simulation
+
+Example:
+
+HOME TEAM
+[ Barcelona ▼ ]
+
+AWAY TEAM
+[ Chelsea ▼ ]
+
+FORMATION
+[ 4-3-3 ▼ ]
+
+[ ⚽ SIMULATE MATCH ]
+
+The simulator should produce a believable match result.
+
+Example:
+
+FULL TIME
+
+Barcelona 2 - 1 Chelsea
+
+⚽ 23' Barcelona
+⚽ 57' Chelsea
+⚽ 81' Barcelona
+
+MATCH STATS
+
+Possession
+Barcelona 56%
+Chelsea 44%
+
+Shots
+Barcelona 12
+Chelsea 8
+
+The simulation should not simply generate a completely random score.
+
+Use player/team ratings to influence:
+
+- Attack strength
+- Midfield strength
+- Defence strength
+- Goal probability
+- Possession
+- Shots
+- Match events
+
+The system should still contain some randomness so every simulation isn't identical.
+
+Eventually I want:
+- Goals
+- Assists
+- Yellow cards
+- Red cards
+- Substitutions
+- Injuries
+- Man of the Match
+- Match statistics
+
+But build these progressively rather than making an unnecessarily complicated system immediately.
+
+━━━━━━━━━━━━━━━━━━━━━━
+FEATURE 3 — TRANSFER NEWS
+━━━━━━━━━━━━━━━━━━━━━━
+
+The second main purpose of the website is football transfer news.
+
+Create a strong Transfer News section where I can publish:
+
+- Transfer news
+- Transfer rumours
+- Official transfers
+- “Here We Go” style updates
+- Transfer articles
+
+The admin should be able to create a transfer post with:
+
+- Player name
+- Current club
+- New club
+- Transfer status
+- Headline
+- Description/article
+- Image
+- Date
+
+Example:
+
+🔄 TRANSFER
+
+Jonathan David
+
+Juventus → Atlético Madrid
+
+STATUS: Negotiations ongoing
+
+[Read Full Story]
+
+The transfer posts should appear automatically on the public Transfer News page.
+
+━━━━━━━━━━━━━━━━━━━━━━
+DESIGN
+━━━━━━━━━━━━━━━━━━━━━━
+
+Make the website look like a modern football media platform.
+
+Prioritize:
+
+- Clean UI
+- Professional football aesthetic
+- Responsive design
+- Mobile-friendly layout
+- Clear navigation
+- Team cards
+- Player cards
+- Match simulator interface
+- Transfer news cards
+
+Do NOT make it overly complicated or unrealistic.
+
+I am a beginner learning web development, so keep the architecture understandable and explain important changes.
+
+━━━━━━━━━━━━━━━━━━━━━━
+IMPORTANT
+━━━━━━━━━━━━━━━━━━━━━━
+
+Do not delete working functionality unnecessarily.
+
+Do not create a huge complicated system all at once.
+
+Build it progressively.
+
+First create the Teams + Squad foundation.
+
+Then build the Match Simulator using that squad data.
+
+Then improve the Transfer News system.
+
+The eventual goal is a real portfolio/placement project that I can demonstrate live and explain to an interviewer.
+
+Use the existing project as the starting point.

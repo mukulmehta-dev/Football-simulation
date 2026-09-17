@@ -1,0 +1,502 @@
+/* Football Hub - Teams & Squads Styling */
+
+/* League Filter Bar */
+.filter-tabs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+  scrollbar-width: none;
+}
+
+.filter-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.filter-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.filter-btn:hover {
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.filter-btn.active {
+  background: var(--accent-green);
+  color: var(--text-dark);
+  border-color: var(--accent-green);
+  box-shadow: 0 4px 12px var(--accent-green-glow);
+}
+
+/* Teams Grid */
+.teams-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.team-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.team-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-green), var(--accent-cyan));
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.team-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 230, 118, 0.3);
+  box-shadow: var(--shadow-lg);
+  background: var(--bg-card-hover);
+}
+
+.team-card:hover::before {
+  opacity: 1;
+}
+
+.team-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.team-badge-wrap {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.4));
+}
+
+.team-crest {
+  width: 100%;
+  height: 100%;
+}
+
+.team-rating-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.2) 0%, rgba(251, 191, 36, 0.05) 100%);
+  border: 1px solid rgba(251, 191, 36, 0.4);
+  border-radius: var(--radius-md);
+}
+
+.team-rating-badge .ovr-num {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: var(--accent-gold);
+  line-height: 1;
+}
+
+.team-rating-badge .ovr-txt {
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.team-card-info h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.25rem;
+}
+
+.team-league-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.team-stat-bars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.team-stat-col .stat-val {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.team-stat-col .stat-lbl {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.team-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* =========================================
+   TEAM DETAIL / SQUAD VIEW
+   ========================================= */
+.team-hero-banner {
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.95) 0%, rgba(10, 14, 23, 0.98) 100%);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 2rem 2.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.team-hero-banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.team-hero-info {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.team-hero-crest {
+  width: 80px;
+  height: 80px;
+  filter: drop-shadow(0 6px 16px rgba(0,0,0,0.5));
+}
+
+.team-hero-text h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.team-meta-pills {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.team-ratings-cluster {
+  display: flex;
+  gap: 1rem;
+}
+
+.rating-box {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1.25rem;
+  text-align: center;
+}
+
+.rating-box.ovr-box {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.15) 0%, rgba(251, 191, 36, 0.05) 100%);
+  border-color: rgba(251, 191, 36, 0.4);
+}
+
+.rating-box .score {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.rating-box .score.gold { color: var(--accent-gold); }
+.rating-box .score.green { color: var(--accent-green); }
+.rating-box .score.cyan { color: var(--accent-cyan); }
+.rating-box .score.blue { color: #60a5fa; }
+
+.rating-box .lbl {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 700;
+  margin-top: 0.2rem;
+}
+
+/* Squad Layout & Position Groups */
+.squad-view-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.position-category-section {
+  margin-bottom: 2.5rem;
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.category-header h3 {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+}
+
+.category-header .count-pill {
+  background: var(--bg-surface);
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+}
+
+.players-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+/* Player Card Component */
+.player-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.player-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-green);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+  background: var(--bg-card-hover);
+}
+
+.player-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.player-jersey-num {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-muted);
+}
+
+.player-rating-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+.rating-elite {
+  background: linear-gradient(135deg, #ffd700 0%, #ffaa00 100%);
+  color: #1a1a1a;
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+}
+
+.rating-gold {
+  background: rgba(251, 191, 36, 0.2);
+  color: var(--accent-gold);
+  border: 1px solid rgba(251, 191, 36, 0.4);
+}
+
+.rating-silver {
+  background: rgba(0, 210, 255, 0.15);
+  color: var(--accent-cyan);
+  border: 1px solid rgba(0, 210, 255, 0.3);
+}
+
+.player-card-main {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.player-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--bg-surface);
+  border: 2px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+.player-identity h4 {
+  font-size: 1.05rem;
+  margin-bottom: 0.15rem;
+}
+
+.player-sub-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.position-tag {
+  font-weight: 700;
+  color: var(--accent-green);
+  text-transform: uppercase;
+}
+
+/* Mini Stats Grid on Player Card */
+.player-mini-stats {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.25rem;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.4rem;
+  border-radius: var(--radius-sm);
+  text-align: center;
+}
+
+.stat-chip .val {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.stat-chip .lbl {
+  font-size: 0.58rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+/* Player Detail Modal Styles */
+.player-modal-profile {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.player-modal-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--bg-surface);
+  border: 3px solid var(--accent-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.player-modal-stats-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-top: 1.5rem;
+}
+
+.stat-bar-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.stat-bar-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.stat-progress-bg {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.stat-progress-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-green));
+  transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (max-width: 768px) {
+  .team-hero-banner-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .team-ratings-cluster {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .rating-box {
+    flex: 1;
+    padding: 0.5rem;
+  }
+}
