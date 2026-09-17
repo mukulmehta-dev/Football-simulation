@@ -1,5 +1,11 @@
 # ⚽ Football Hub — Portfolio & Project Guide
 
+[![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-181717?logo=github)](https://github.com/mukulmehta-dev/Football-simulation)
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-000000?style=flat&logo=vercel&logoColor=white)](https://football-simulation.vercel.app)
+
+> 🌐 **Live URL**: [https://football-simulation.vercel.app](https://football-simulation.vercel.app) *(or your Vercel deployment URL)*  
+> 📂 **GitHub Repository**: [https://github.com/mukulmehta-dev/Football-simulation](https://github.com/mukulmehta-dev/Football-simulation)
+
 **Football Hub** is a modern, high-performance web platform built with vanilla HTML5, CSS3, and modern JavaScript (ES6 modules). It provides football enthusiasts with club squad insights, a stat-driven match simulation engine, and breaking transfer market coverage.
 
 ---
